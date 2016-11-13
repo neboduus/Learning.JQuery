@@ -5,13 +5,15 @@
       <meta charset="utf-8">
       <title> HTML5 basics </title>
    </head>
-   <body>
+   <body onload="init()">
       <!-- Here goes the visible content of the page -->
       <header>
          <h1>Magazzino</h1>
       </header>       
-        
-        <button onclick="init()">Vedi Magazzino!</button>
+       <br>
+      <h3 id="available"></h3>
+
+       <button onclick="newOrder()">Inserisci nuovi prodotti!</button>
        
        <p>Good Bye from the jungle!</p>
        
