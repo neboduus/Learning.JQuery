@@ -4,13 +4,13 @@
 var magazzino = { pesche:3 , mele:4 , pere:5 } 
 var max = 20;
 
-
 function space_left(){
     c = 0;
     for (key in magazzino){
             c += parseInt(magazzino[key]);
         };
     c = max - c;
+    max = c;
     
     //aggiorno il contatore sulla pagina
     var cont = document.getElementById("available");
@@ -90,10 +90,31 @@ function newOrder(){
     if (button == null){
         button = document.createElement("button");
         button.setAttribute("id", "btnOrder");
+        button.setAttribute("onClick", "order()");
         var text = document.createTextNode("Order more!");
         button.appendChild(text);
         document.body.appendChild(button);
     }
-}
+};
+
+function order(){
+    var key = document.getElementById("txtbProduct").valueOf;
+    var amount = document.getElementById("txtbAmount").value;
+    var chk = false;
+    
+    for(k in magazzino){
+        if (k == key){
+            magazzino[k] += amount;
+            chk = true;
+        };
+    };
+    
+    if (chk == false){
+        magazzino[key] = amount;
+    }
+    space_left();
+};
+
+
 
 
