@@ -13,8 +13,15 @@
         <br>
         <h3 id="available"></h3>
         <table id="myTable"></table>
-        <button onclick="newOrder()">Inserisci nuovi prodotti!</button>
+        <button onclick="order_new()">Inserisci nuovi prodotti!</button>
        
+       <br>
+       <br>
+       <h5 id="lblProduct" style="visibility: hidden">Nome Prodotto</h5>
+       <input type="text" id="txtbProduct" style="visibility: hidden">
+       <h5 id="lblAmount" style="visibility: hidden">Quantita</h5>
+       <input type="number" id="txtbAmount" style="visibility: hidden">
+       <button id="btnOrder" onclick="order()" style="visibility: hidden">Ordina</button>
        <!-- Script -->
        <script src="magazzino.js"></script>
    </body>

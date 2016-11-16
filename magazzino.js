@@ -35,11 +35,10 @@ function init(){
     space_left();
 };
 
-/**
- * @brief aggiunge i campi per poter ordinare altri prodotti
+/**permette di inserire un nuovo prodotto
  * @return null
  */
-function newOrder(){
+function order_new(){
     //prendo gli oggetti della pagina
     var button = document.getElementById("btnOrder");
     var lblProduct = document.getElementById("lblProduct");
@@ -47,48 +46,29 @@ function newOrder(){
     var lblAmount = document.getElementById("lblAmount");
     var txtbAmount = document.getElementById("txtbAmount");
     
-    //solo se non sono già stati aggiunti
-    //gli aggiungo uno ad uno
-    if (lblProduct == null){
-        var lbl = document.createElement("B");
-        lbl.setAttribute("id", "lblProduct");
-        var t = document.createTextNode("Nome Prodotto: ");
-        lbl.appendChild(t);
-        document.body.appendChild(lbl);
+    //basta che controllo solo se uno é invisibile
+    if( (button.style.visibility == "hidden") ){
+        /li metto tutti visibili
+        button.style.visibility = "visible";
+        lblProduct.style.visibility = "visible";
+        lblAmount.style.visibility = "visible";
+        txtbAmount.style.visibility = "visible";
+        txtbProduct.style.visibility = "visible";
+        //aggiorno il contenuto
+        txtbAmount.value = "";
+        txtbProduct.value = "";
+        
+    }else{
+        //li rendo invisibili
+        button.style.visibility = "hidden";
+        lblProduct.style.visibility = "hidden";
+        lblAmount.style.visibility = "hidden";
+        txtbAmount.style.visibility = "hidden";
+        txtbProduct.style.visibility = "hidden";
     }
-    
-    if (txtbProduct == null){
-        var txt = document.createElement("INPUT");
-        txt.setAttribute("type", "text"); 
-        txt.setAttribute("id", "txtbProduct");
-        document.body.appendChild(txt);
-    }
-    
-    if (lblAmount == null){
-        var lbl = document.createElement("B");
-        lbl.setAttribute("id", "lblAmount");
-        var t = document.createTextNode("Quantità: ");
-        lbl.appendChild(t);
-        document.body.appendChild(lbl);
-    }
-    
-    if (txtbAmount == null){
-        var txt = document.createElement("INPUT");
-        txt.setAttribute("type", "number"); 
-        txt.setAttribute("value", "0");
-        txt.setAttribute("id", "txtbAmount");
-        document.body.appendChild(txt);
-    }
-    
-    if (button == null){
-        button = document.createElement("button");
-        button.setAttribute("id", "btnOrder");
-        button.setAttribute("onClick", "order()");
-        var text = document.createTextNode("Ordina Prodotto!");
-        button.appendChild(text);
-        document.body.appendChild(button);
-    }
-};
+        
+}
+
 
 /**
  * @brief ordina un'altro oggetto e informa se non c'é più spazio
@@ -113,7 +93,6 @@ function order(){
      
     //se il prodotto non c'era già
     if (check == false){
-        window.alert(key + " " + amount);
         //aggiungo il nuovo prodotto in magazzino
         magazzino[magazzino.length]=key;
         Q[Q.length]=amount;
