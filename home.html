@@ -3,28 +3,30 @@
    <head>
       <!-- Here goes the metadata -->  
       <meta charset="utf-8">
+      <link rel="stylesheet" href="myStyle.css">
       <title> HTML5 basics </title>
    </head>
-   <body onload="init()">
+   <body class="center" onload="init()">
         <!-- Here goes the visible content of the page -->
-        <header>
-          <h1>Magazzino</h1>
-        </header>       
+       <div class="center>"
+        
+          <h1>Magazzino</h1>      
         <br>
         <h3 id="available"></h3>
         <table id="myTable"></table>
         <button onclick="showMore()">Aggiungi spazio al magazzino</button>
-        <input id="space" type="number" style="visibility:hidden">
-        <button id="btnSpace" onclick="more()" style="visibility:hidden">Aggiungi</button>
+        <input id="space" type="number" class="hidden">
+        <button id="btnSpace" onclick="more()" class="hidden">Aggiungi</button>
         <button onclick="order_new()">Ordina nuovi prodotti</button>
        
        <br>
        <br>
-       <b id="lblProduct" style="visibility: hidden">Nome Prodotto</b>
-       <input type="text" id="txtbProduct" style="visibility: hidden">
-       <b id="lblAmount" style="visibility: hidden">Quantita</b>
-       <input type="number" id="txtbAmount" style="visibility: hidden">
-       <button id="btnOrder" onclick="order()" style="visibility: hidden">Ordina</button>
+       <b id="lblProduct" class="hidden">Nome Prodotto</b>
+       <input type="text" id="txtbProduct" class="hidden">
+       <b id="lblAmount" class="hidden">Quantita</b>
+       <input type="number" id="txtbAmount" class="hidden">
+       <button id="btnOrder" onclick="order()" class="hidden">Ordina</button>
+    </div>
        <!-- Script -->
        <script src="magazzino.js"></script>
    </body>

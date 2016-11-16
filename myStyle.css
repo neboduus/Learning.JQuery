@@ -1,0 +1,8 @@
+body {
+	background-color: darkgray;
+	font-family: serif;
+}
+
+.hidden{
+    visibility: hidden
+}

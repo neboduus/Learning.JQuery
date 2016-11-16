@@ -119,15 +119,20 @@ function more(){
     space_left();             //aggiorno pagina 
 }
 
+/**
+ * @brief Some mostra e nasconde i gli input per aggiornare lo spazio in magazzino
+ * @return null
+ */
 function showMore(){
+    //recupero gli elementi
     var a = document.getElementById("space");
     var b = document.getElementById("btnSpace");
     if ((a.style.visibility == "hidden") && (b.style.visibility == "hidden")){
         space.value = 0;
-        a.style.visibility = "visible";
+        a.style.visibility = "visible";     //rendo visibili se erano nascosti
         b.style.visibility = "visible";
     }else{
-        a.style.visibility = "hidden";
+        a.style.visibility = "hidden";      //rendo nascosti
         b.style.visibility = "hidden";
     }
 }
