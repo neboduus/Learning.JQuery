@@ -1,0 +1,19 @@
+{
+  "name": "se2_16_173901_l2",
+  "version": "1.0.0",
+  "description": "magazzino virtuale",
+  "main": "magazzino.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neboduus/SE2_16_173901_L2.git"
+  },
+  "author": "marian diaconu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neboduus/SE2_16_173901_L2/issues"
+  },
+  "homepage": "https://github.com/neboduus/SE2_16_173901_L2#readme"
+}
