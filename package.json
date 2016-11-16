@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/neboduus/SE2_16_173901_L2/issues"
   },
-  "homepage": "https://github.com/neboduus/SE2_16_173901_L2#readme"
+  "homepage": "https://github.com/neboduus/SE2_16_173901_L2#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
