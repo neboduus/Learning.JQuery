@@ -5,12 +5,11 @@ var magazzino = { pesche:3 , mele:4 , pere:5 }
 var max = 20;
 
 function space_left(){
-    c = 0;
+    var c = 0;
     for (key in magazzino){
             c += parseInt(magazzino[key]);
         };
     c = max - c;
-    max = c;
     
     //aggiorno il contatore sulla pagina
     var cont = document.getElementById("available");
@@ -98,7 +97,7 @@ function newOrder(){
 };
 
 function order(){
-    var key = document.getElementById("txtbProduct").valueOf;
+    var key = document.getElementById("txtbProduct").value;
     var amount = document.getElementById("txtbAmount").value;
     var chk = false;
     
