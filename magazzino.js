@@ -31,8 +31,7 @@ function init(){
         cell.innerHTML = magazzino[i] + " - " + Q[i];  //inserisco il prodotto
         cell.style.border = "1px solid #000";
     }
-        
-    space_left();
+    space_left();   //aggiorno pagina
 };
 
 /**permette di inserire un nuovo prodotto
@@ -48,7 +47,7 @@ function order_new(){
     
     //basta che controllo solo se uno é invisibile
     if( (button.style.visibility == "hidden") ){
-        /li metto tutti visibili
+        //li metto tutti visibili
         button.style.visibility = "visible";
         lblProduct.style.visibility = "visible";
         lblAmount.style.visibility = "visible";
@@ -101,10 +100,49 @@ function order(){
     }
     //informo l'utente che lo spazio non é sufficiente
     if (qnt >= max){
-        window.alert("Attention! There is no more space!");    
+        window.alert("Attenzione! Lo spazio nel magazzino non e' sufficiente!");    
     }
     space_left();
     init();
 };
+
+/**
+ * @brief aumenta lo spazio in magazzino
+ * @return null
+ */
+function more(){
+    var space = document.getElementById("space").value;
+    max += parseFloat(space); //aggiorno spazio
+    if (space < 0){
+        window.alert("Hai diminuito lo spazio invece che aumentarlo!");
+    }
+    space_left();             //aggiorno pagina 
+}
+
+function showMore(){
+    var a = document.getElementById("space");
+    var b = document.getElementById("btnSpace");
+    if ((a.style.visibility == "hidden") && (b.style.visibility == "hidden")){
+        space.value = 0;
+        a.style.visibility = "visible";
+        b.style.visibility = "visible";
+    }else{
+        a.style.visibility = "hidden";
+        b.style.visibility = "hidden";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
