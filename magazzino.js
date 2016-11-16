@@ -3,14 +3,14 @@
 */
 var magazzino = [ "pesche", "mele", "pere" ]; //contenitore oggetti
 var Q = [3,3,3];                              //quantità degli oggetti
-var max = 20.0;
-var qnt = 9.0;
+var max = 20.0;                               //massimo spazio disponibile in magazzino
+var qnt = 9.0;                                //quantità presente in magazzino
 /**
  * @brief mostra lo spazio disponibile
  * @return null
  */
 function space_left(){
-    //aggiorno il contatore sulla pagina
+    //aggiorno il visualizzatore dello spazio disponibile sulla pagina
     var cont = document.getElementById("available");        //prendo l'oggetto
     cont.innerHTML = "Available Space: " + (max-qnt).toString();  //aggiorno l html
 };
@@ -47,12 +47,14 @@ function order_new(){
     
     //basta che controllo solo se uno é invisibile
     if( (button.style.visibility == "hidden") ){
+        
         //li metto tutti visibili
         button.style.visibility = "visible";
         lblProduct.style.visibility = "visible";
         lblAmount.style.visibility = "visible";
         txtbAmount.style.visibility = "visible";
         txtbProduct.style.visibility = "visible";
+        
         //aggiorno il contenuto
         txtbAmount.value = "";
         txtbProduct.value = "";
